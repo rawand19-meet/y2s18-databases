@@ -27,28 +27,39 @@ Humans have been in contact with giraffes for centuries,
 since the Egyptian civilization to the Roman Empire, were considered exotic gifts to lure foreign diplomats. However
 , giraffes have not gotten the best retribution from humans in return.""" ,"""Masai Giraffe,Rothschild Giraffe,
 	Reticulated Giraffe,West African Giraffe""")
+add_article("hi","hello","woo")
 
 
 
 
 def query_all_articles():
-	animal = session.query(Animal).first()
+	animal = session.query(Animal).all()
 	return animal
 print(query_all_articles())
 for i in query_all_articles():
 	print (i)
 
-query_article_by_topic()
+#query_article_by_topic()
 		
 
 def query_article_by_topic():
 	pass
 
-def delete_article_by_topic():
-	pass
+def delete_Animal(information):
+	session.query(Animal).filter_by(
+		information = information	).delete()
+	session.commit()
+	
+delete_Animal("hi")
+print(query_all_articles())
 
 def delete_all_articles():
-	pass
+ session.query(Animal).delete()
+ session.commit()
+
+delete_all_articles()
+print(query_all_articles())
 
 def edit_article_rating():
-	pass
+	pass	
+
