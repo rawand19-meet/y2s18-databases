@@ -6,16 +6,16 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 class Animal(Base):
-    __tablename__'animal'
-    ID= Column(Integer,primary_key = True)
-    Giraffe_Information= Column(String)
-    Giraffes_and_humans = Column(String)
-    Types_of_Giraffes = Column(String)
+    __tablename__='animal'
+    id= Column(Integer,primary_key = True)
+    information= Column(String)
+    actions_with_humans = Column(String)
+    types = Column(String)
     def __repr__(self):
-            return("Animal Giraffe_Information:{}\n"
-	 		   "Animal Giraffes_and_humans:{}\n"
-	 		   "Animal Types_of_Giraffes:{}\n"	).format(
-	 		   self.Giraffe_Information , self.Giraffes_and_humans,self.Giraffes_and_humans)
+            return("Information:{}\n"
+	 		   "Animal actions_with_humans:{}\n"
+	 		   "Animal Types:{}\n"	).format(
+	 		   self.information , self.actions_with_humans,self.types)
 
 
 	# Create a table with 4 columns
@@ -24,4 +24,4 @@ class Animal(Base):
 	# the name of the Wiki article that you're referencing
 	# The third column will be a string representing the 
 	# topic of the article. The last column will be
-	# an integer, representing your rating of the article.
+	# an integer, representing your rating of the articlet
